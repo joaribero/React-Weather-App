@@ -1,14 +1,9 @@
 import React from 'react';
+//import Error from '../components/Error.jsx'
 
 const Weather = ({result}) => {
-    
-    //extract the values
-    /*if (result == null) {
-        console.log("entro aca");
-        return null;      
-    }*/
 
-    const {name, main} = result;
+    const {name, main} = result || {};
 
     if (!name) return null;
  

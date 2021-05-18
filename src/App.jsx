@@ -1,8 +1,8 @@
 import React,{Fragment, useEffect, useState} from 'react';
 import Header from './components/Header.jsx';
 import Form from './components/Form.jsx';
-import Weather from './components/Weather.jsx'
-import Error from './components/Weather.jsx'
+import Weather from './components/Weather.jsx';
+import Error from './components/Error.jsx';
 
 function App() {
   
@@ -12,14 +12,14 @@ function App() {
     country:''
   });
   const [request,setRequest] = useState(false);
-  const [results,setResult] = useState({});
+  const [result,setResult] = useState({});
   const [error, setError] = useState(false);
   
 
   const {city, country} = search;
 
   useEffect(() => {
-    
+
     const requestAPI = async () => {
 
       if (request) {
@@ -43,15 +43,14 @@ function App() {
            
     };
     requestAPI();
-  },[request,city,country]);
- 
- let component; 
- if (error) {
-  component = <Error message="No results"/>;
- } else {
-  component = <Weather result={results}/>;
- }
- 
+  },[request,city,country]); 
+
+  let component;
+  if (error) {
+    component = <Error message="No results found."/>;
+  } else {
+    component = <Weather result={result} />;
+  }
 
   return (
     <Fragment>
