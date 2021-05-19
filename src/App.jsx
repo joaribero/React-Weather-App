@@ -43,7 +43,8 @@ function App() {
            
     };
     requestAPI();
-  },[request,city,country]); 
+    // eslint-disable-next-line
+  },[request]); 
 
   let component;
   if (error) {

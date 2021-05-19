@@ -1,5 +1,5 @@
 import React from 'react';
-//import Error from '../components/Error.jsx'
+import PropTypes from 'prop-types';
 
 const Weather = ({result}) => {
 
@@ -23,6 +23,11 @@ const Weather = ({result}) => {
             </div>
         </div>
      );
-}
- 
+};
+
+//Document props
+Weather.propTypes = {
+    result: PropTypes.object.isRequired
+};
+
 export default Weather;
