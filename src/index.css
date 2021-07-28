@@ -77,3 +77,19 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   text-align: center!important;
   color: #FFF!important;
 }
+
+.icon-img {
+  display: flex;
+  justify-content: center;
+}
+
+.imgW {
+  width: 100px;
+}
+
+.icon-img span {
+  line-height: normal;
+  display: table-caption;
+  margin: 0;
+  padding: 5px;
+}

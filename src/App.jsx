@@ -23,8 +23,8 @@ function App() {
     const requestAPI = async () => {
 
       if (request) {
-        const appId = process.env['API_KEY'] || '62ce60d25ed127a877fe489b7c3263e9'
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${appId}`
+        const appId = process.env['API_KEY'] || '0dfc9aaba46b19bf46c9f8aaaa37527d'
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${appId}`
 
         const response = await fetch(url);
         const result = await response.json();
