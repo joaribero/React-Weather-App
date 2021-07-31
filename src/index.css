@@ -1,7 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: rgb(18,82,136);
+  background: linear-gradient(0deg, rgba(18,82,136,1) 17%, rgba(3,169,244,1) 51%);
+  min-height: 100%;
 }
 nav .brand-logo {
   display: block;
@@ -92,4 +99,45 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   display: table-caption;
   margin: 0;
   padding: 5px;
+}
+
+.card-panel {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.country {
+  float: left;
+  display: block;
+  font-weight: bold;
+}
+
+.block {
+  margin: 5px;
 }

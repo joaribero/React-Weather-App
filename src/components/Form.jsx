@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Error from '../components/Error.jsx'
 import PropTypes from 'prop-types';
 
-const Form = ({search,setSearch,setRequest}) => {
+const Form = ({search,setSearch,setRequest,result,setLastResults,lastResults}) => {
     
     //state
     const [error,setError] = useState(false);
@@ -33,6 +33,9 @@ const Form = ({search,setSearch,setRequest}) => {
         
         //transfer to the main component
         setRequest(true);
+        if (result)  {
+            setLastResults(lastResults => [...lastResults,result]);
+        }
     }
     
     return ( 

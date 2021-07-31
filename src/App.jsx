@@ -3,6 +3,7 @@ import Header from './components/Header.jsx';
 import Form from './components/Form.jsx';
 import Weather from './components/Weather.jsx';
 import Error from './components/Error.jsx';
+import LastResult from './components/LastResult.jsx';
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
   const [request,setRequest] = useState(false);
   const [result,setResult] = useState({});
   const [error, setError] = useState(false);
+  const [lastResults,setLastResults] = useState([]);
   
 
   const {city, country} = search;
@@ -66,11 +68,25 @@ function App() {
                 search={search}
                 setSearch={setSearch}
                 setRequest={setRequest}
+                result={result}
+                setLastResults={setLastResults}
+                lastResults={lastResults}
               />
             </div>
             <div className="col m6 s12">
               {component}
             </div>
+          </div>
+          <div className="row">
+            <h2 className="white-text">Last results</h2>          
+            {
+              lastResults.map(lastResult => (
+                <div className="column">
+                  <LastResult lastResult={lastResult}/>
+                </div>
+                )
+              )
+            }            
           </div>
         </div>
       </div>

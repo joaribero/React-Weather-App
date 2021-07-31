@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 
 const Weather = ({result}) => {
 
-    const {name, main,weather} = result || {};
+    const {name, main,weather,sys} = result || {};
 
     if (!name) return null;
 
     console.log(result);
 
     const iconUrl = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
- 
+
     return ( 
         <div className="card-panel blue darken-3 col s12">
-            <div className="white-text">
+            <div className="block">
+                <span className="white-text country">{sys.country}</span>
+            </div>
+            <div className="white-text">           
                 <h2>{name}'s climate is: </h2>
                 <p className="temperatura">
                     {main.temp} <span>&#x2103;</span>
